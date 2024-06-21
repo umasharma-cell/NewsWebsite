@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: rgb(120, 16, 141); 
+          background-image: linear-gradient(to right, rgb(63, 201, 229), rgb(120, 16, 141));
+        }
+        .login-form {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+        }
+        .login-form input {
+            margin-bottom: 15px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .login-form .button-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .login-form button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .login-form .login-button {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .login-form .submit-button {
+            background-color: #008CBA;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <form  class="login-form" >
+        <h2>Login-Form</h2>
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <div class="button-container">
+            <button type="button" class="login-button" onclick="redirectToMain()">Login</button>
+            <button type="submit" class="submit-button">Submit</button>
+        </div>
+    </form>
+    <script>
+        function redirectToMain() {
+            window.location.href = 'project.html'; // Replace with your main website URL
+        }
+        let form = document.querySelector("form");
+        form.addEventListener('submit',(e)=>{
+            e.preventDefault();
+            let data = new FormData(form);
+            fetch('https://script.google.com/macros/s/AKfycbyZyEYnYYS-5C4bUCj7Gr2c_jRVzKb1BQYeXa8eVewsywI624IO2A442LyOz38wj6P4Yg/exec',{
+                method: "POST",
+                body: data
+            })
+            .then(res => res.text())
+            .then(data => console.log(data));
+        })
+
+    </script>
+</body>
+</html>

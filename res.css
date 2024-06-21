@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto:wght@500&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-text-color: #183b56;
+    --secondary-text-color: #577592;
+    --accent-color: #2294ed;
+    --accent-color-dark: #1d69a3;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: var(--primary-text-color);
+}
+
+p {
+    font-family: "Roboto", sans-serif;
+    color: var(--secondary-text-color);
+    line-height: 1.4rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    max-width: 1180px;
+    margin-inline: auto;
+    overflow: hidden;
+    padding-inline: 16px;
+}
+
+nav {
+    background-color: #eaf5fc;
+    box-shadow: 0 0 4px #c1c2c4;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    left: 0;
+    right: 0;
+}
+
+.main-nav {
+    justify-content: space-between;
+    padding-block: 8px;
+}
+
+.company-logo img {
+    width: 180px;
+}
+
+.nav-links ul {
+    gap: 16px;
+}
+
+.hover-link {
+    cursor: pointer;
+}
+
+.hover-link:hover {
+    color: var(--secondary-text-color);
+}
+
+.hover-link:active {
+    color: red;
+}
+
+.search-bar {
+    height: 32px;
+    gap: 8px;
+}
+
+.news-input {
+    width: 200px;
+    height: 100%;
+    padding-inline: 12px;
+    border-radius: 4px;
+    border: 2px solid #bbd0e2;
+    font-family: "Roboto", sans-serif;
+}
+
+.search-button {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 8px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+}
+
+.search-button:hover {
+    background-color: var(--accent-color-dark);
+}
+
+main {
+    padding-block: 20px;
+    margin-top: 80px;
+}
+
+.cards-container {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    align-items: start;
+}
+
+.card {
+    width: 360px;
+    min-height: 400px;
+    box-shadow: 0 0 4px #d4ecff;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #fff;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 1px 1px 8px #d4ecff;
+    background-color: #f9fdff;
+    transform: translateY(-2px);
+}
+
+.card-header img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 12px;
+}
+
+.news-source {
+    margin-block: 12px;
+}
+
+/* css code for voice detector */
+.voice-search {
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    background-color: #fff;
+    padding: 10px;
+    margin: 0px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#start-button {
+    background-color: #5eabfd;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#results {
+    margin-top: 20px;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 90%;
+    }
+
+    .company-logo img {
+        width: 150px;
+    }
+
+    .news-input {
+        width: 150px;
+    }
+
+    .search-button {
+        padding: 6px 18px;
+    }
+
+    .card {
+        width: 45%;
+        min-height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    nav .main-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-block: 12px;
+    }
+
+    .company-logo img {
+        width: 130px;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .search-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .news-input {
+        width: 100%;
+    }
+
+    .search-button {
+        width: 100%;
+        padding: 8px 16px;
+    }
+
+    .card {
+        width: 100%;
+        min-height: auto;
+    }
+
+    .container {
+        padding-inline: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .company-logo img {
+        width: 100px;
+    }
+
+    .card-header img {
+        height: 120px;
+    }
+
+    .voice-search {
+        width: 100%;
+        bottom: 0;
+        right: 0;
+        border-radius: 0;
+    }
+
+    #start-button {
+        width: 100%;
+        padding: 10px 0;
+    }
+}
